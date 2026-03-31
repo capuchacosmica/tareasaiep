@@ -1,0 +1,37 @@
+/* Estilos para el periódico El Faro */
+body {
+    background-color: #f5f5dc; /* Este es el código de color Beige clásico */
+    font-family: 'Times New Roman', Times, serif; /* Fuente tipo periódico */
+    margin: 40px; /* Margen para que el texto no choque con los bordes */
+    line-height: 1.6; /* Espaciado entre líneas para que sea fácil de leer */
+}
+
+/* Estilo opcional para que las tablas se vean blancas y resalten */
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+/* Estilos para las tablas verticales */
+table {
+    border-collapse: collapse;
+    background-color: transparent; /* Para que luzca el beige de fondo */
+    margin-top: 20px;
+}
+
+td {
+    padding: 5px 0; /* Espacio vertical entre el título, cat y texto */
+    display: block; /* Esto obliga a que cada celda se porte como un bloque hacia abajo */
+    width: 100%;
+}
+
+/* Para que el texto de la noticia tenga un poco más de separación */
+td:last-child {
+    margin-bottom: 20px;
+    text-align: justify;
+}
