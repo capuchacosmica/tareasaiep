@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <!-- Aquí pondré la referencia a google fonts para cambiar la fuente -->
+    <!-- Referencia a google fonts para cambiar la fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -29,10 +29,12 @@
         </nav>
     </header>
 
-    <main>
+    <main class="layout">
+        <div>
         <section id="inicio">
             <h2>Noticia Destacada: Gran Apertura de El Faro</h2>
             <p>Bienvenidos y bienvenidas a la primera edición de nuestro periódico digital.</p>
+        </section>
 
             <article>
                 <hr>
@@ -49,8 +51,8 @@
 
             <article>
                 <hr>
-                <h3 align="center">Entrevista Exclusiva</h3>
-                <p align="center">No te pierdas la entrevista a Jorge González respecto a la Revolución Pingüina, donde analiza el impacto social y cultural del movimiento estudiantil en Chile.</p>
+                <h3>Entrevista Exclusiva</h3>
+                <p>No te pierdas la entrevista a Jorge González respecto a la Revolución Pingüina, donde analiza el impacto social y cultural del movimiento estudiantil en Chile.</p>
                 
                 <div align="center" style="margin-top: 15px;">
                     <audio controls>
@@ -59,13 +61,12 @@
                     </audio>
                 </div>
             </article>
-            <hr>
         </section>
 
         <section id="deportes">
             <hr>
             <h2>Sección: Deportes</h2>
-            <table border="0" width="100%" style="margin-bottom: 40px;">
+            <article border="0" width="100%" style="margin-bottom: 40px;">
                 <tbody>
                     <tr>
                         <td style="font-size: 1.5rem; font-weight: bold; color: #5d4037; padding-top: 20px;">La autocrítica de Yanara Aedo en Colo Colo Femenino</td>
@@ -105,13 +106,13 @@
                     Además, cuentan con Tiane Endler. Una de las mejores porteras del mundo le da un seguro de vida atrás que el Wolfsburg hoy no tiene garantizado con sus bajas en defensa.</td>
                     </tr>
                 </tbody>
-            </table>
+            </article>
         </section>
 
         <section id="negocios">
             <hr>
             <h2>Sección: Negocios</h2>
-            <table border="0" width="100%" style="margin-bottom: 40px;">
+            <article border="0" width="100%" style="margin-bottom: 40px;">
                 <tbody>
                     <tr>
                         <td style="font-size: 1.5rem; font-weight: bold; color: #5d4037; padding-top: 20px;">Aumento en el uso de IA por emprendedores chilenos</td>
@@ -148,8 +149,11 @@
             <tr>
                 <td style="padding-bottom: 30px; border-bottom: 1px solid #d7ccc8;">El gobierno anuncia nuevos subsidios y facilidades tributarias para pequeños empresarios, buscando fomentar la creación de empleos en regiones apartadas...</td>
             </tr>
+            <footer>
+            <p>© 2026 Periódico El Faro por Sophia Toro</p>
+            </footer>
         </tbody>
-    </table>
+    </article>
 </section>
 </body>
 </html>
