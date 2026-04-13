@@ -15,6 +15,11 @@
 <body>
 
     <header>
+        
+        <div class="fecha-container">
+            <p>Fecha y hora: <span id="fecha-reloj">Domingo, 12 de abril de 2026</span></p>
+        </div>
+    
         <div class="logo-container">
             <img src="img/logo.PNG" alt="Logo El Faro" width="200">
             <h1>El Faro</h1>
@@ -29,12 +34,14 @@
         </nav>
     </header>
 
+    <div id="contador-total" class="contador-total">
+        <p>Total de artículos en el sitio: <span id="total-articulos">0</span></p>
+    </div>
+
     <main class="layout">
-        <div>
         <section id="inicio">
             <h2>Noticia Destacada: Gran Apertura de El Faro</h2>
             <p>Bienvenidos y bienvenidas a la primera edición de nuestro periódico digital.</p>
-        </section>
 
             <article>
                 <hr>
@@ -61,6 +68,29 @@
                     </audio>
                 </div>
             </article>
+        </section>
+
+        <section id="crear-articulo">
+            <h2>Agregar un nuevo artículo</h2>
+            <form id="form-articulo">
+                <div class="form-group">
+                    <label for="seccion-articulo">Sección</label>
+                    <select id="seccion-articulo" required>
+                        <option value="inicio">Inicio</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="negocios">Negocios</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="titulo-articulo">Título del artículo</label>
+                    <input id="titulo-articulo" type="text" placeholder="Escribe el título" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion-articulo">Descripción del artículo</label>
+                    <textarea id="descripcion-articulo" rows="4" placeholder="Describe el artículo" required></textarea>
+                </div>
+                <button type="submit" class="btn-accion">Agregar artículo</button>
+            </form>
         </section>
 
         <section id="deportes">
@@ -93,14 +123,12 @@
                     </p>
                   </article>
         </section>  
-                        
-    </tbody>
-    </article>
-    </section>
+    
+    
 
         <section id="negocios">
-    <hr>
-    <h2>Sección: Negocios</h2>
+        <hr>
+        <h2>Sección: Negocios</h2>
 
     <article>
         <h3>Aumento en el uso de IA por emprendedores chilenos</h3>
@@ -132,3 +160,88 @@
         </p>
     </article>
     </section>
+
+<script>
+    function actualizarReloj() {
+        const ahora = new Date();
+
+        // Opciones de visualización para la fecha y hora en formato local
+        const opciones = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        };
+
+        const fechaHoraTexto = ahora.toLocaleDateString('es-ES', opciones);
+        document.getElementById('fecha-reloj').textContent = fechaHoraTexto;
+    }
+
+    function actualizarContadores() {
+        const secciones = document.querySelectorAll('main section');
+        let total = 0;
+
+        secciones.forEach(seccion => {
+            if (seccion.id === 'crear-articulo') {
+                return;
+            }
+
+            const articulos = seccion.querySelectorAll('article');
+            total += articulos.length;
+
+            let contador = seccion.querySelector('.contador-seccion');
+            if (!contador) {
+                contador = document.createElement('p');
+                contador.className = 'contador-seccion';
+                seccion.querySelector('h2')?.insertAdjacentElement('afterend', contador);
+            }
+            contador.innerHTML = 'Artículos en esta sección: <span class="contador-seccion-numero">' + articulos.length + '</span>';
+        });
+
+        document.getElementById('total-articulos').textContent = total;
+    }
+
+    // Ejecutar la función cada 1000 milisegundos
+    setInterval(actualizarReloj, 1000);
+
+    // Llamar a la función una vez al principio para que no espere 1 segundo en aparecer
+    actualizarReloj();
+    actualizarContadores();
+
+    const formArticulo = document.getElementById('form-articulo');
+    const seccionArticulo = document.getElementById('seccion-articulo');
+    const tituloArticulo = document.getElementById('titulo-articulo');
+    const descripcionArticulo = document.getElementById('descripcion-articulo');
+
+    formArticulo.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const titulo = tituloArticulo.value.trim();
+        const descripcion = descripcionArticulo.value.trim();
+        const seccion = seccionArticulo.value;
+
+        if (!titulo || !descripcion) {
+            return;
+        }
+
+        const destino = document.getElementById(seccion);
+        const nuevoArticulo = document.createElement('article');
+        const nuevoTitulo = document.createElement('h3');
+        const nuevoParrafo = document.createElement('p');
+
+        nuevoTitulo.textContent = titulo;
+        nuevoParrafo.textContent = descripcion;
+
+        nuevoArticulo.appendChild(nuevoTitulo);
+        nuevoArticulo.appendChild(nuevoParrafo);
+        destino.appendChild(nuevoArticulo);
+
+        actualizarContadores();
+        formArticulo.reset();
+    });
+</script>                    
+</body>
+</html>
