@@ -1,247 +1,285 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <!-- Referencia a google fonts para cambiar la fuente -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Periódico Digital El Faro</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap" rel="stylesheet">
+
+<title>El Faro</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <header>
-        
-        <div class="fecha-container">
-            <p>Fecha y hora: <span id="fecha-reloj">Domingo, 12 de abril de 2026</span></p>
-        </div>
-    
-        <div class="logo-container">
-            <img src="img/logo.PNG" alt="Logo El Faro" width="200">
-            <h1>El Faro</h1>
-        </div>
+<header>
+    <p>Fecha y hora: <span id="fecha-reloj"></span></p>
 
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#deportes">Deportes</a></li>
-                <li><a href="#negocios">Negocios</a></li>
-            </ul>
-        </nav>
-    </header>
+    <img src="img/logo.PNG" width="200">
+    <h1>El Faro</h1>
 
-    <div id="contador-total" class="contador-total">
-        <p>Total de artículos en el sitio: <span id="total-articulos">0</span></p>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#deportes">Deportes</a></li>
+            <li><a href="#negocios">Negocios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="layout">
-        <section id="inicio">
-            <h2>Noticia Destacada: Gran Apertura de El Faro</h2>
-            <p>Bienvenidos y bienvenidas a la primera edición de nuestro periódico digital.</p>
+<div class="contador-total">
+    Total de artículos: <span id="total-articulos">0</span>
+</div>
 
-            <article>
-                <hr>
-                <h3 align="center">¡Viral! Firulais: El maestro del hurto de empanadas</h3>
-                <p align="center">Un astuto perrito fue captado 'in fraganti' sustrayendo una empanada de pino en plena celebración. El video se ha vuelto tendencia nacional.</p>
+<main>
 
-                <div align="center">
-                    <video controls width="600" poster="img/logo.png">
-                        <source src="media/perro-empanada.mp4" type="video/mp4">
-                        Tu navegador no soporta el formato de video.
-                    </video>
-                </div>
-            </article>
+<!-- INICIO -->
+<section id="inicio" class="seccion-noticias">
+<h2>Inicio</h2>
+<div class="contador-seccion">Artículos en esta sección: <span class="contador-articulos-seccion">0</span></div>
 
-            <article>
-                <hr>
-                <h3>Entrevista Exclusiva</h3>
-                <p>No te pierdas la entrevista a Jorge González respecto a la Revolución Pingüina, donde analiza el impacto social y cultural del movimiento estudiantil en Chile.</p>
-                
-                <div align="center" style="margin-top: 15px;">
-                    <audio controls>
-                        <source src="media/jorge-gonzalez.mp3" type="audio/mpeg">
-                        Tu navegador no soporta el formato de audio.
-                    </audio>
-                </div>
-            </article>
-        </section>
+<table>
+<tr>
+<td>
+<article>
+<h3>¡Viral! Firulais</h3>
+<p>Un astuto perrito fue captado robando una empanada.</p>
 
-        <section id="crear-articulo">
-            <h2>Agregar un nuevo artículo</h2>
-            <form id="form-articulo">
-                <div class="form-group">
-                    <label for="seccion-articulo">Sección</label>
-                    <select id="seccion-articulo" required>
-                        <option value="inicio">Inicio</option>
-                        <option value="deportes">Deportes</option>
-                        <option value="negocios">Negocios</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="titulo-articulo">Título del artículo</label>
-                    <input id="titulo-articulo" type="text" placeholder="Escribe el título" required>
-                </div>
-                <div class="form-group">
-                    <label for="descripcion-articulo">Descripción del artículo</label>
-                    <textarea id="descripcion-articulo" rows="4" placeholder="Describe el artículo" required></textarea>
-                </div>
-                <button type="submit" class="btn-accion">Agregar artículo</button>
-            </form>
-        </section>
+<video controls>
+<source src="media/perro-empanada.mp4">
+</video>
+</article>
+</td>
 
-        <section id="deportes">
-            <h2>Sección: Deportes</h2>
-            <article>
-                <h3>La autocrítica de Yanara Aedo en Colo Colo Femenino</h3>
-                  <p><strong>Categoría:</strong> Fútbol</p>
-                    <p>">Colo Colo Femenino jugó este sábado su segundo partido oficial de la temporada, tras el debut triunfal ante Magallanes y no jugar el fin de semana anterior por tener libre. A pesar de que lleva dos triunfos por 3-0, en el Cacique saben que tienen mucho por mejorar en este 2026.
-                    En diálogo con Colo Colo TV, Aedo realizó una autocrítica como capitana del plantel ante la gran cantidad de goles errados por sus compañeras: “Nos llevamos los tres puntos, pero tenemos que seguir mejorando, todavía nos falta ser más efectivas, creo que llegamos muchas veces y estamos concretando poco. Hay que ajustar. Si bien hacemos los tres goles y nos quedamos con los tres puntos, siempre queremos un poco más y vamos a trabajar en lo que nos está faltando".</td>
-                    </p>
-                    </article>
-
-                    <article> 
-                        <h3>Cruce del Río de La Plata: Hazaña Chilena</h3>
-                        <p><strong>Categoría:</strong> Natación</p>
-                        <p>La travesía de Anahis y Tomás comenzó a las 5:07 am desde Colonia (Uruguay) y culminó en territorio argentino.
-                        Anahis lo completó en un tiempo de 14 horas, 41 minutos y 48 segundos, mientras que Tomás lo realizó con un registro de 16 horas, 21 minutos y 19 segundos.
-                        Los nadadores nacionales fueron acompañados por el grupo Nadando Argentina, quienes organizaron y fiscalizaron el cruce que realizaron los nadadores nacionales.</td>
-                    </p>
-                    </article>
-
-                   <article>
-                    <h3>Endler, favorita en el clásico europeo</h3>
-                    <p><strong>Categoría:</strong> Fútbol internacional</p>
-                    <p> Olympique de Lyon, con Tiane Endler como figura, llega como gran favorito al duelo de cuartos de final de la Champions League frente al Wolfsburg de Alemania. El cuadro francés ostenta una hegemonía psicológica casi total en la última década
-                    El Wolfsburg se impuso en el primer choque entre ambos, la final del 2012 en Londres, sin embargo el Lyon no perdió más desde entonces. Le ganó en las finales del 2016, 2018 y 2020, sino que también se llevó los duelos de cuartos en 2016/17 y 2018/19.
-                    El Wolfsburg llega con una racha sólida (5 victorias en 6 partidos), pero con bajas críticas. La ausencia de Alexandra Popp es un golpe durísimo, no solo por su capacidad goleadora, sino por su liderazgo en partidos de esta magnitud. Sin ella, la responsabilidad recae en Beerensteyn y la veteranía de Svenja Huth.
-                    Por su parte, el OL Lyonnes es una máquina de ganar. Solo quedaron segundas en la fase de liga por diferencia de goles ante gigantes como el Barça y el Chelsea. Ya le ganaron 3-1 al Wolfsburg esta misma temporada y el año pasado en la fase de grupos.
-                    Además, cuentan con Tiane Endler. Una de las mejores porteras del mundo le da un seguro de vida atrás que el Wolfsburg hoy no tiene garantizado con sus bajas en defensa.</td>
-                    </p>
-                  </article>
-        </section>  
-    
-    
-
-        <section id="negocios">
-        <hr>
-        <h2>Sección: Negocios</h2>
-
+<td>
     <article>
-        <h3>Aumento en el uso de IA por emprendedores chilenos</h3>
-        <p><strong>Categoría:</strong> Tecnología</p>
-        <p>
-            Según la última medición del estudio “Radar Emprendedor”, elaborado por G100 junto a Criteria, 
-            el uso de inteligencia artificial (IA) subió un 25% en sólo tres meses. Además, un 60% de los 
-            emprendedores encuestados declaró utilizarla en su negocio. A pesar de las dificultades económicas, 
-            un 81% afirma que la IA impulsa el crecimiento.
-        </p>
-    </article>
+        <h3>Entrevista Exclusiva</h3>
+        <p>No te pierdas la entrevista a Jorge González sobre la Revolución Pingüina.</p>
 
-    <article>
-        <h3>Un 55% atribuye mayor responsabilidad en alza de combustibles al gobierno actual</h3>
-        <p><strong>Categoría:</strong> Economía</p>
-        <p>
-            Durante la semana, cientos de personas acudieron a cargar combustible antes del alza, que impactará 
-            distintos rubros. En paralelo, el Gobierno ingresó medidas como bonos para transportistas y ajustes 
-            tributarios para pymes. Según el sondeo, la mayoría atribuye la responsabilidad del alza al gobierno actual.
-        </p>
-    </article>
+    <audio controls>
+        <source src="media/jorge-gonzalez.mp3">
+    </audio>
+</article>
+</td>
+</tr>
+</table>
+</section>
 
-    <article>
-        <h3>Nuevas leyes para Pymes</h3>
-        <p><strong>Categoría:</strong> Finanzas</p>
-        <p>
-            El gobierno anuncia nuevos subsidios y facilidades tributarias para pequeños empresarios, 
-            buscando fomentar la creación de empleos en regiones.
-        </p>
-    </article>
-    </section>
+<!-- FORMULARIO ARTICULO -->
+    <section class="form-card">
+        <h2>Agregar artículo</h2>
+
+    <form id="form-articulo">
+
+<div class="form-seccion">
+<label>Título</label>
+<input id="titulo-articulo" required>
+</div>
+
+<div class="form-seccion">
+<label>Sección</label>
+<select id="seccion-articulo">
+<option value="inicio">Inicio</option>
+<option value="deportes">Deportes</option>
+<option value="negocios">Negocios</option>
+</select>
+</div>
+
+<div class="form-seccion">
+<label>Descripción</label>
+<textarea id="descripcion-articulo" required></textarea>
+</div>
+
+<button class="btn-accion">Agregar</button>
+
+</form>
+</section>
+
+<!-- DEPORTES -->
+<section id="deportes" class="seccion-noticias">
+<h2>Deportes</h2>
+<div class="contador-seccion">Artículos en esta sección: <span class="contador-articulos-seccion">0</span></div>
+
+<table>
+<tr>
+
+<td>
+<article>
+<h3>Yanara Aedo en Colo Colo</h3>
+<p><strong>Categoría:</strong> Fútbol</p>
+<p>
+Colo Colo Femenino jugó su segundo partido oficial de la temporada. 
+A pesar de ganar 3-0, el equipo reconoce que debe mejorar su efectividad.
+</p>
+</article>
+</td>
+
+<td>
+<article>
+<h3>Cruce del Río de la Plata</h3>
+<p><strong>Categoría:</strong> Natación</p>
+<p>
+Los nadadores chilenos completaron la travesía en más de 14 horas,
+logrando una hazaña internacional.
+</p>
+</article>
+</td>
+
+<td>
+<article>
+<h3>Endler destaca en Europa</h3>
+<p><strong>Categoría:</strong> Fútbol</p>
+<p>
+La portera chilena es clave en el Lyon en la Champions League,
+consolidándose como una de las mejores del mundo.
+</p>
+</article>
+</td>
+
+</tr>
+</table>
+</section>
+
+<!-- NEGOCIOS -->
+<section id="negocios" class="seccion-noticias">
+<h2>Negocios</h2>
+<div class="contador-seccion">Artículos en esta sección: <span class="contador-articulos-seccion">0</span></div>
+
+<table>
+<tr>
+
+<td>
+<article>
+<h3>Uso de IA en Chile</h3>
+<p><strong>Categoría:</strong> Tecnología</p>
+<p>
+El uso de inteligencia artificial crece entre emprendedores chilenos,
+impulsando el desarrollo de negocios.
+</p>
+</article>
+</td>
+
+<td>
+<article>
+<h3>Alza de combustibles</h3>
+<p><strong>Categoría:</strong> Economía</p>
+<p>
+El aumento impacta a distintos sectores y genera debate sobre responsabilidades.
+</p>
+</article>
+</td>
+
+<td>
+<article>
+<h3>Nuevas leyes para Pymes</h3>
+<p><strong>Categoría:</strong> Finanzas</p>
+<p>
+Se anuncian beneficios para impulsar el empleo y el crecimiento.
+</p>
+</article>
+</td>
+
+</tr>
+</table>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="form-card">
+<h2>Contacto</h2>
+</section>
+
+</main>
+
+<footer>
+<p>Periódico El Faro - 2026</p>
+</footer>
 
 <script>
-    function actualizarReloj() {
+    function actualizarReloj(){
         const ahora = new Date();
-
-        // Opciones de visualización para la fecha y hora en formato local
-        const opciones = {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        };
-
-        const fechaHoraTexto = ahora.toLocaleDateString('es-ES', opciones);
-        document.getElementById('fecha-reloj').textContent = fechaHoraTexto;
+        document.getElementById("fecha-reloj").textContent = ahora.toLocaleString("es-ES");
     }
+    setInterval(actualizarReloj, 1000);
+    actualizarReloj();
 
-    function actualizarContadores() {
-        const secciones = document.querySelectorAll('main section');
-        let total = 0;
+    function actualizarContadores(){
+        const secciones = document.querySelectorAll("section.seccion-noticias");
+        secciones.forEach(function(section){
+            const contadorSeccion = section.querySelector(".contador-articulos-seccion");
+            if (contadorSeccion) {
+                contadorSeccion.textContent = section.querySelectorAll("article").length;
+            }
+        });
+        document.getElementById("total-articulos").textContent = document.querySelectorAll("article").length;
+    }
+    actualizarContadores();
 
-        secciones.forEach(seccion => {
-            if (seccion.id === 'crear-articulo') {
+    function crearFormularioContacto(){
+        const contactoSection = document.getElementById("contacto");
+        const form = document.createElement("form");
+        form.id = "form-contacto";
+        form.innerHTML = `
+            <div class="form-seccion">
+                <label>Nombre</label>
+                <input id="nombre-contacto" required>
+            </div>
+            <div class="form-seccion">
+                <label>Mensaje</label>
+                <textarea id="mensaje-contacto" required></textarea>
+            </div>
+            <button class="btn-accion">Enviar</button>
+        `;
+        contactoSection.appendChild(form);
+
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre-contacto").value.trim();
+            const mensaje = document.getElementById("mensaje-contacto").value.trim();
+            if (!nombre || !mensaje) {
                 return;
             }
 
-            const articulos = seccion.querySelectorAll('article');
-            total += articulos.length;
-
-            let contador = seccion.querySelector('.contador-seccion');
-            if (!contador) {
-                contador = document.createElement('p');
-                contador.className = 'contador-seccion';
-                seccion.querySelector('h2')?.insertAdjacentElement('afterend', contador);
-            }
-            contador.innerHTML = 'Artículos en esta sección: <span class="contador-seccion-numero">' + articulos.length + '</span>';
+            alert(`Gracias por tu mensaje, ${nombre}!`);
+            form.reset();
         });
-
-        document.getElementById('total-articulos').textContent = total;
     }
 
-    // Ejecutar la función cada 1000 milisegundos
-    setInterval(actualizarReloj, 1000);
+    crearFormularioContacto();
 
-    // Llamar a la función una vez al principio para que no espere 1 segundo en aparecer
-    actualizarReloj();
-    actualizarContadores();
-
-    const formArticulo = document.getElementById('form-articulo');
-    const seccionArticulo = document.getElementById('seccion-articulo');
-    const tituloArticulo = document.getElementById('titulo-articulo');
-    const descripcionArticulo = document.getElementById('descripcion-articulo');
-
-    formArticulo.addEventListener('submit', function(event) {
+    document.getElementById("form-articulo").addEventListener("submit", function(event){
         event.preventDefault();
 
-        const titulo = tituloArticulo.value.trim();
-        const descripcion = descripcionArticulo.value.trim();
-        const seccion = seccionArticulo.value;
+        const titulo = document.getElementById("titulo-articulo").value.trim();
+        const seccion = document.getElementById("seccion-articulo").value;
+        const descripcion = document.getElementById("descripcion-articulo").value.trim();
+        
 
         if (!titulo || !descripcion) {
             return;
         }
 
-        const destino = document.getElementById(seccion);
-        const nuevoArticulo = document.createElement('article');
-        const nuevoTitulo = document.createElement('h3');
-        const nuevoParrafo = document.createElement('p');
+        const articulo = document.createElement("article");
+        articulo.innerHTML = `
+            <h3>${titulo}</h3>
+            <p>${descripcion}</p>
+        `;
 
-        nuevoTitulo.textContent = titulo;
-        nuevoParrafo.textContent = descripcion;
+        const contenedorSeccion = document.getElementById(seccion);
+        if (contenedorSeccion) {
+            const tabla = contenedorSeccion.querySelector("table") || contenedorSeccion;
+            const fila = document.createElement("tr");
+            const celda = document.createElement("td");
+            celda.appendChild(articulo);
+            fila.appendChild(celda);
+            tabla.appendChild(fila);
+        }
 
-        nuevoArticulo.appendChild(nuevoTitulo);
-        nuevoArticulo.appendChild(nuevoParrafo);
-        destino.appendChild(nuevoArticulo);
-
+        document.getElementById("form-articulo").reset();
         actualizarContadores();
-        formArticulo.reset();
     });
-</script>                    
+</script>
+
 </body>
 </html>
