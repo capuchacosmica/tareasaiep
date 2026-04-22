@@ -12,6 +12,13 @@ h1, h2, h3 {
     color: #5d4037;
 }
 
+#haiku img {
+  object-fit: cover;
+}
+
+#haiku .card {
+  overflow: hidden;
+}
 h1 {
     border-bottom: 2px solid #5d4037;
 }
@@ -23,6 +30,14 @@ nav ul {
     list-style: none;
 }
 
+#panoramas .card {
+  border-left: 5px solid #3273dc; /* color Bulma */
+  border-radius: 10px;
+}
+
+#panoramas .card-content {
+  min-height: 160px;
+}
 /* LINKS */
 a {
     text-decoration: underline;
@@ -110,10 +125,11 @@ input, textarea, select {
 }
 
 footer {
-    background: #c9d2d0;
-    color: #31231e;
+    background: #a67c52;
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 20px 20px;
+    font-size: 25px;
 }
 
 /* RESPONSIVE */

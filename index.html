@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap" rel="stylesheet">
 
-<title>El Faro</title>
-<link rel="stylesheet" href="css/style.css">
+    <title>El Faro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
-
+    
 <header>
-    <p>Fecha y hora: <span id="fecha-reloj"></span></p>
+    <nav class="navbar is-light">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+            <img src="img/logo.PNG" width="40">
+            <strong class="ml-2">El Faro</strong>
+            </a>
+        </div>
 
-    <img src="img/logo.PNG" width="200">
-    <h1>El Faro</h1>
-
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#deportes">Deportes</a></li>
-            <li><a href="#negocios">Negocios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+        <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="#inicio">Inicio</a>
+            <a class="navbar-item" href="#deportes">Deportes</a>
+            <a class="navbar-item" href="#negocios">Negocios</a>
+            <a class="navbar-item" href="#contacto">Contacto</a>
+        </div>
+    </div>
+        <div class="has-text-centered mt-2">
+        Fecha y hora: <span id="fecha-reloj"></span>
+        </div>
+  </div>
+</nav>
 </header>
 
 <div class="contador-total">
@@ -33,37 +43,154 @@
 </div>
 
 <main>
+    <!-- AVISOS -->
+    <div class="notification is-warning has-text-centered">
+        Avisos de último minuto: Terremoto de magnitud 8.7 sacude el norte de Chile.
+    </div>
+
+    <section class="section" id="haiku">
+  <div class="container">
+
+    <h2 class="title is-3 has-text-centered">Haiku del día</h2>
+
+    <div class="columns is-centered">
+
+      <div class="column is-one-third">
+        <div class="card">
+
+          <!-- IMAGEN -->
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="img/haiku1.jpg" alt="Flor de loto">
+            </figure>
+          </div>
+
+          <!-- CONTENIDO -->
+          <div class="card-content has-text-centered">
+            <article>
+              <h3 class="title is-5">Palabras de luz</h3>
+              <p>
+                "El sonido que hace el loto cuando lo roza la tortuga"<br>
+                <strong>— Onitsura</strong>
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+ 
+<section class="section" id="panoramas">
+  <div class="container">
+
+    <!-- TÍTULO -->
+    <h2 class="title is-3 has-text-centered">
+      Panoramas en la Región Metropolitana
+    </h2>
+
+    <div class="columns is-multiline">
+
+      <!-- PANORAMA 1 -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <article>
+              <h3 class="title is-5">Feria Gastronómica</h3>
+              <p><strong>Ubicación:</strong> Providencia</p>
+              <p>
+                Disfruta de comida internacional, música en vivo y actividades culturales este fin de semana.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANORAMA 2 -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <article>
+              <h3 class="title is-5">Museos Gratis</h3>
+              <p><strong>Ubicación:</strong> Santiago Centro</p>
+              <p>
+                Recorrido cultural por museos con entrada liberada durante todo el día.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANORAMA 3 -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <article>
+              <h3 class="title is-5">Concierto al aire libre</h3>
+              <p><strong>Ubicación:</strong> Las Condes</p>
+              <p>
+                Evento gratuito con bandas locales en un ambiente familiar.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <!-- INICIO -->
-<section id="inicio" class="seccion-noticias">
-<h2>Inicio</h2>
-<div class="contador-seccion">Artículos en esta sección: <span class="contador-articulos-seccion">0</span></div>
+<section id="inicio" class="section">
+<div class="container">
 
-<table>
-<tr>
-<td>
-<article>
-<h3>¡Viral! Firulais</h3>
-<p>Un astuto perrito fue captado robando una empanada.</p>
+<h2 class="title">Inicio</h2>
 
-<video controls>
-<source src="media/perro-empanada.mp4">
-</video>
-</article>
-</td>
+<div class="columns">
 
-<td>
-    <article>
-        <h3>Entrevista Exclusiva</h3>
-        <p>No te pierdas la entrevista a Jorge González sobre la Revolución Pingüina.</p>
+  <!-- NOTICIA PRINCIPAL -->
+  <div class="column is-two-thirds">
+    <div class="card">
+      <div class="card-content">
+        <article>
+        <p class="title">¡Viral! Firulais</p>
+        <p>Un astuto perrito fue captado robando una empanada.</p>
+        </article>
+        <video controls>
+          <source src="media/perro-empanada.mp4">
+        </video>
+      </div>
+    </div>
+  </div>
 
-    <audio controls>
-        <source src="media/jorge-gonzalez.mp3">
-    </audio>
-</article>
-</td>
-</tr>
-</table>
+  <!-- NOTICIAS PEQUEÑAS -->
+  <div class="column">
+
+    <div class="card mb-4">
+      <div class="card-content">
+        <p class="subtitle">Entrevista Exclusiva</p>
+
+        <audio controls>
+          <source src="media/jorge-gonzalez.mp3">
+        </audio>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+</section>
+
+    
+  </div>
+
+  </div>
 </section>
 
 <!-- FORMULARIO ARTICULO -->
@@ -96,92 +223,147 @@
 </form>
 </section>
 
-<!-- DEPORTES -->
-<section id="deportes" class="seccion-noticias">
-<h2>Deportes</h2>
-<div class="contador-seccion">Artículos en esta sección: <span class="contador-articulos-seccion">0</span></div>
+<section class="section" id="reciente">
+  <div class="container">
 
-<table>
-<tr>
+    <h2 class="title is-3 has-text-centered">
+      📰 Artículo más reciente
+    </h2>
 
-<td>
-<article>
-<h3>Yanara Aedo en Colo Colo</h3>
-<p><strong>Categoría:</strong> Fútbol</p>
-<p>
-Colo Colo Femenino jugó su segundo partido oficial de la temporada. 
-A pesar de ganar 3-0, el equipo reconoce que debe mejorar su efectividad.
-</p>
-</article>
-</td>
+    <div class="columns is-centered">
 
-<td>
-<article>
-<h3>Cruce del Río de la Plata</h3>
-<p><strong>Categoría:</strong> Natación</p>
-<p>
-Los nadadores chilenos completaron la travesía en más de 14 horas,
-logrando una hazaña internacional.
-</p>
-</article>
-</td>
+      <div class="column is-two-thirds">
+        <div class="card">
 
-<td>
-<article>
-<h3>Endler destaca en Europa</h3>
-<p><strong>Categoría:</strong> Fútbol</p>
-<p>
-La portera chilena es clave en el Lyon en la Champions League,
-consolidándose como una de las mejores del mundo.
-</p>
-</article>
-</td>
+          <div class="card-content">
+            <article id="articulo-destacado">
+              <h3 class="title is-4">Nueva tecnología revoluciona Chile</h3>
+              <p>
+                Un innovador sistema basado en inteligencia artificial está transformando la forma en que operan las empresas en el país.
+              </p>
+            </article>
+          </div>
 
-</tr>
-</table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
+<!-- DEPORTES -->
+<section id="deportes" class="section seccion-noticias">
+<div class="container">
+
+<h2 class="title">Deportes</h2>
+
+<div class="contador-seccion">
+  Artículos en esta sección: 
+  <span class="contador-articulos-seccion">0</span>
+</div>
+
+<div class="columns is-multiline">
+
+<div class="column is-one-third">
+    <div class="card">
+      <div class="card-content">
+        <article>
+          <h3 class="title is-5">Yanara Aedo en Colo Colo</h3>
+          <p><strong>Categoría:</strong> Fútbol</p>
+        <p> Colo Colo Femenino jugó su segundo partido oficial de la temporada. 
+            A pesar de ganar 3-0, el equipo reconoce que debe mejorar su efectividad.
+        </p>
+    </article>
+      </div>
+    </div>
+  </div>
+
+<div class="column is-one-third">
+    <div class="card">
+      <div class="card-content">
+        <article>
+          <h3 class="title is-5">Cruce del Río de la Plata</h3>
+          <p><strong>Categoría:</strong> Natación</p>
+            <p> Los nadadores chilenos completaron la travesía en más de 14 horas, logrando una hazaña internacional.
+        </p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+<div class="column is-one-third">
+    <div class="card">
+      <div class="card-content">
+        <article>
+          <h3 class="title is-5">Endler destaca en Europa</h3>
+      <p><strong>Categoría:</strong> Fútbol</p>
+      <p> La portera chilena es clave en el Lyon en la Champions League, consolidándose como una de las mejores del mundo.
+       </article>
+      </div>
+    </div>
+  </div>
+
 <!-- NEGOCIOS -->
-<section id="negocios" class="seccion-noticias">
-<h2>Negocios</h2>
-<div class="contador-seccion">Artículos en esta sección: <span class="contador-articulos-seccion">0</span></div>
+<section id="negocios" class="section seccion-noticias">
+  <div class="container">
 
-<table>
-<tr>
+    <h2 class="title">Negocios</h2>
 
-<td>
-<article>
-<h3>Uso de IA en Chile</h3>
-<p><strong>Categoría:</strong> Tecnología</p>
-<p>
-El uso de inteligencia artificial crece entre emprendedores chilenos,
-impulsando el desarrollo de negocios.
-</p>
-</article>
-</td>
+    <div class="contador-seccion">
+      Artículos en esta sección: 
+      <span class="contador-articulos-seccion">0</span>
+    </div>
 
-<td>
-<article>
-<h3>Alza de combustibles</h3>
-<p><strong>Categoría:</strong> Economía</p>
-<p>
-El aumento impacta a distintos sectores y genera debate sobre responsabilidades.
-</p>
-</article>
-</td>
+    <div class="columns is-multiline">
 
-<td>
-<article>
-<h3>Nuevas leyes para Pymes</h3>
-<p><strong>Categoría:</strong> Finanzas</p>
-<p>
-Se anuncian beneficios para impulsar el empleo y el crecimiento.
-</p>
-</article>
-</td>
+<div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <article>
+            <h3 class="title is-5">Uso de IA en Chile</h3>
+            <p><strong>Categoría:</strong> Tecnología</p>
+            <p>
+              El uso de inteligencia artificial crece entre emprendedores chilenos,
+              impulsando el desarrollo de negocios.
+            </p>
+          </div>
+        </div>
+        </article>
+      </div>
 
-</tr>
-</table>
+<div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <article>
+            <h3 class="title is-5">Alza de combustibles</h3>
+            <p><strong>Categoría:</strong> Economía</p>
+            <p>
+              El aumento impacta a distintos sectores y genera debate sobre responsabilidades.
+            </p>
+          </div>
+        </div>
+        </article>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <article>
+            <h3 class="title is-5">Nuevas leyes para Pymes</h3>
+            <p><strong>Categoría:</strong> Finanzas</p>
+            <p>
+              Se anuncian beneficios para impulsar el empleo y el crecimiento.
+            </p>
+          </div>
+        </div>
+        </article>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <!-- CONTACTO -->
@@ -267,14 +449,27 @@ Se anuncian beneficios para impulsar el empleo y el crecimiento.
         `;
 
         const contenedorSeccion = document.getElementById(seccion);
-        if (contenedorSeccion) {
-            const tabla = contenedorSeccion.querySelector("table") || contenedorSeccion;
-            const fila = document.createElement("tr");
-            const celda = document.createElement("td");
-            celda.appendChild(articulo);
-            fila.appendChild(celda);
-            tabla.appendChild(fila);
-        }
+
+if (contenedorSeccion) {
+
+    const columnas = contenedorSeccion.querySelector(".columns");
+
+    const nuevaColumna = document.createElement("div");
+    nuevaColumna.className = "column is-one-third";
+
+    nuevaColumna.innerHTML = `
+        <div class="card">
+        <div class="card-content">
+            <article>
+                <h3>${titulo}</h3>
+                <p>${descripcion}</p>
+            </article>
+        </div>
+        </div>
+`;
+
+    columnas.appendChild(nuevaColumna);
+}
 
         document.getElementById("form-articulo").reset();
         actualizarContadores();
